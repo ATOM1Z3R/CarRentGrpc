@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc";
+
+package localizations;
+
+import "google/protobuf/empty.proto";
+
+service Localization {
+    rpc GetAllLocalizations(google.protobuf.Empty) returns (GetAllLocalizationsResponse);
+    rpc GetLocalizationsByCity(GetLocalizationsByCityRequest) returns (GetLocalizationsByCityResponse);
+    rpc AddLocalization(AddLocalizationRequest) returns (google.protobuf.Empty);
+    rpc AddCarToLocalization(AddCarToLocalizationRequest) returns (google.protobuf.Empty);
+    rpc GetLocalizations(stream GetLocalizationsRequest) returns (stream GetLocalizationsResponse);
+}
+
+message LocalizationCommon {
+    string city = 1;
+    string street = 2;
+}
+
+message GetLocalization {
+        int32 id = 1;
+        LocalizationCommon localization = 2;
+        message Car {
+            int32 id = 1;
+            string numberPlate = 2;
+            string manufacturer = 3;
+            string model = 4;
+            string color = 5;
+            uint32 numberOfSeats = 7;
+            uint32 year = 8;
+            bool availability = 9;
+            uint32 priceMultiplier = 10;
+        }
+        repeated Car cars = 3;
+    }
+
+message GetLocalizationsByCityRequest {
+    string city=1;
+}
+
+message GetLocalizationsRequest {
+    int32 start = 1;
+    int32 end = 2;
+}
+
+message AddLocalizationRequest {
+    LocalizationCommon localization = 1;
+}
+
+message AddCarToLocalizationRequest {
+    int32 localizationId = 1;
+    int32 carId = 2;
+}
+
+message GetAllLocalizationsResponse {
+    message Localization {
+        int32 id = 1;
+        LocalizationCommon localization = 2;
+    }
+    repeated Localization localizations = 1;
+}
+
+message GetLocalizationsResponse {
+    repeated GetLocalization localizations = 1;
+}
+
+message GetLocalizationsByCityResponse {
+    repeated GetLocalization localizations = 1;
+}

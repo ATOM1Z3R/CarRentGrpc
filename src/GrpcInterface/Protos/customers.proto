@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc";
+
+package customers;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service Custmer {
+    rpc GetById(GetCustomerByIdRequest) returns (GetCustomerByIdResponse);
+    rpc Update(UpdateCustomerRequest) returns (google.protobuf.Empty);
+    rpc AddCustomer(AddCustomerRequest) returns (google.protobuf.Empty);
+}
+
+message CustomerCommon {
+    string phoneNumber = 1;
+    string email = 2;
+    string city = 3;
+    string street = 4;
+}
+
+message GetCustomerByIdRequest {
+    int32 id = 1;
+}
+
+message GetCustomerByIdResponse {
+    int32 id = 1;
+    string firstName = 2;
+    string lastName = 3;
+    CustomerCommon customer = 4;
+    repeated CustomerReservation reservations = 5;
+}
+
+message AddCustomerRequest {
+    string firstName = 1;
+    string lastName = 2;
+    CustomerCommon customer = 3;
+}
+
+message UpdateCustomerRequest {
+    int32 id = 1;
+    CustomerCommon customer = 2;
+}
+
+message CustomerReservation {
+    int32 id = 1;
+    google.protobuf.Timestamp rentDate = 2;
+    google.protobuf.Timestamp expectingRetrieveDate = 3;
+    google.protobuf.Timestamp ActualRetrieveDate = 4;
+    message ReservedCar {
+        string numberPlate = 2;
+        string manufacturer = 3;
+        string model = 4;
+    }
+    ReservedCar reservedCar = 5;
+}
+
+message CustomerCar {
+    string numberPlate = 2;
+    string manufacturer = 3;
+    string model = 4;
+}

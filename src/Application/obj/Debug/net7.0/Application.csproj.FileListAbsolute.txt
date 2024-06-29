@@ -1,0 +1,15 @@
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/bin/Debug/net7.0/Application.deps.json
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/bin/Debug/net7.0/Application.dll
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/bin/Debug/net7.0/Application.pdb
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/bin/Debug/net7.0/Domain.dll
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/bin/Debug/net7.0/Domain.pdb
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.AssemblyInfoInputs.cache
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.AssemblyInfo.cs
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.csproj.CopyComplete
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.dll
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/refint/Application.dll
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/Application.pdb
+/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/obj/Debug/net7.0/ref/Application.dll

@@ -1,0 +1,4 @@
+obj/Debug/net8.0/Protos/Customers.cs \
+obj/Debug/net8.0/Protos/CustomersGrpc.cs: /home/atom/.nuget/packages/grpc.tools/2.56.0/build/native/include/google/protobuf/empty.proto\
+ /home/atom/.nuget/packages/grpc.tools/2.56.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/customers.proto

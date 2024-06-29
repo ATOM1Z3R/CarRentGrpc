@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1ctNCSPpTGxr8Oig8v+DRERNNWGHoDQMxfpLUq9d9qk=",
+  "Source": "GrpcInterface",
+  "BasePath": "_content/GrpcInterface",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

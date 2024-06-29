@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc";
+
+package cars;
+
+import "google/protobuf/empty.proto";
+
+enum CarAvailability
+{
+    Available = 0;
+    Unavailable = 1;
+    All = 2;
+}
+
+service Car {
+    rpc GetAllCars(GetAllCarsRequest) returns (GetAllCarsResponse);
+    rpc FindCarByNumberPlate(FindCarByNumberPlateRequest) returns (FindCarByNumberPlateResponse);
+    rpc AddCar(AddCarRequest) returns (google.protobuf.Empty);
+}
+
+message CarCommon {
+    string numberPlate = 2;
+    string manufacturer = 3;
+    string model = 4;
+    string color = 5;
+    uint32 numberOfSeats = 6;
+    uint32 year = 7;
+    bool availability = 8;
+    uint32 priceMultiplier = 9;
+}
+
+message CarResponseCommon {
+    int32 id = 1;
+    CarCommon car = 2;
+    message CarLocalization {
+        int32 id = 1;
+        string city = 2;
+        string street = 3;
+    }
+    CarLocalization Localization = 3;
+}
+
+message FindCarByNumberPlateRequest {
+    string numberPlate = 1;
+}
+
+message GetAllCarsRequest {
+    CarAvailability availability = 1;
+}
+
+message AddCarRequest {
+    CarCommon car = 1;
+}
+
+message GetAllCarsResponse {
+    repeated CarResponseCommon cars = 1;
+}
+
+message FindCarByNumberPlateResponse {
+    repeated CarResponseCommon cars = 1;
+}

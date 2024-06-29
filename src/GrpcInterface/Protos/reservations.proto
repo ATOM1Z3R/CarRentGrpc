@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc";
+
+package reservations;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+enum ReservationStatus
+{
+    Normal = 0;
+    Late = 1;
+    All = 2;
+}
+
+service Reservation {
+    rpc GetByCustomer(GetByCustomerRequest) returns (GetReservationsResponse);
+    rpc GetUretrieved(GetUretrievedRequest) returns (GetReservationsResponse);
+    rpc GetByDate(GetByDateRequest) returns (GetReservationsResponse);
+    rpc Make(MakeRequest) returns (google.protobuf.Empty);
+    rpc Retrieve(RetrieveRequest) returns (google.protobuf.Empty);
+}
+
+message GetByCustomerRequest {
+    int32 customerId = 1;
+}
+
+message RetrieveRequest {
+    int32 reservationId = 1;
+}
+
+message GetUretrievedRequest {
+    ReservationStatus status = 1;
+}
+
+message GetByDateRequest {
+    google.protobuf.Timestamp startDate = 1;
+    google.protobuf.Timestamp endDate = 2;
+}
+
+message MakeRequest {
+    ReservationCommon reservation = 1;
+    int32 customerId = 2;
+    int32 carId = 3;
+}
+
+message ReservationCommon {
+    google.protobuf.Timestamp rentDate = 2;
+    google.protobuf.Timestamp expectingRetrieveDate = 3;
+    
+}
+
+message GetReservationsResponse {
+    message Reservation {
+        int32 id = 1;
+        ReservationCommon reservation = 2;
+        google.protobuf.Timestamp ActualRetrieveDate = 3;
+        message Car {
+            int32 id = 1;
+            string numberPlate = 2;
+            string manufacturer = 3;
+            string model = 4;
+            string color = 5;
+            uint32 numberOfSeats = 6;
+            uint32 year = 7;
+            bool availability = 8;
+            uint32 priceMultiplier = 9;
+        }
+        Car car = 4;
+        message Customer {
+            int32 id = 1;
+            string firstNamme = 2;
+            string lastName = 3;
+            string phoneNumber = 4;
+            string email = 5;
+        }
+        Customer customer = 5;
+    }
+    repeated Reservation reservations = 1;
+}

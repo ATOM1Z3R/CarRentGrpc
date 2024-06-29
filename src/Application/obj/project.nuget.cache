@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "e77svJge3/r0ok4SgBj3z1/lgek0Du3il3t0FkhjGfqoLseXvDmmjccXq1Vs19W1Cyzc6UXhg/ZnPNDM40bbxw==",
+  "success": true,
+  "projectFilePath": "/home/atom/Dev/MinimalApiRent/CarRentGrpc/src/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/home/atom/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
+    "/home/atom/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/atom/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/home/atom/.nuget/packages/microsoft.netcore.app.ref/7.0.14/microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "/home/atom/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
